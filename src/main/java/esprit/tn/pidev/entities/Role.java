@@ -1,6 +1,6 @@
 package esprit.tn.pidev.entities;
 
+
 public enum Role {
-    PATIENT,
-    DOCTOR
+    ADMIN, PATIENT, MEDECIN, CHAUFFEUR
 }

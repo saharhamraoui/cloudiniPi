@@ -18,6 +18,8 @@ public class Prescription {
     private String dosage;
     private String instructions;
     private LocalDate issueDate;
+    @Enumerated(EnumType.STRING)
+    private PrescriptionStatus status;
 
     // Constructors
     public Prescription() {}

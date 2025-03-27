@@ -7,6 +7,7 @@ import java.util.List;
 
 @Entity
 public class MedicalRecord {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMedicalRecord;
@@ -28,9 +29,12 @@ public class MedicalRecord {
     @OneToMany(mappedBy = "medicalRecord", cascade = CascadeType.ALL)
     private List<Consultation> consultations;
 
+    @OneToMany(mappedBy = "medicalRecord", cascade = CascadeType.ALL)
+    private List<Bilan> bilans;
+
     private String diagnosis;
     private String notes;
-
+    private String allergies;
     // Constructors
     public MedicalRecord() {}
 
@@ -41,18 +45,76 @@ public class MedicalRecord {
         this.notes = notes;
     }
 
-    // Getters and Setters
-    public Long getIdMedicalRecord() { return idMedicalRecord; }
+    public Long getIdMedicalRecord() {
+        return idMedicalRecord;
+    }
 
-    public User getPatient() { return patient; }
+    public void setIdMedicalRecord(Long idMedicalRecord) {
+        this.idMedicalRecord = idMedicalRecord;
+    }
 
-    public User getDoctor() { return doctor; }
+    public Patient getPatient() {
+        return patient;
+    }
 
-    public List<Prescription> getPrescriptions() { return prescriptions; }
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
 
-    public String getDiagnosis() { return diagnosis; }
+    public Medecin getDoctor() {
+        return doctor;
+    }
 
-    public String getNotes() { return notes; }
+    public void setDoctor(Medecin doctor) {
+        this.doctor = doctor;
+    }
 
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public List<Prescription> getPrescriptions() {
+        return prescriptions;
+    }
+
+    public void setPrescriptions(List<Prescription> prescriptions) {
+        this.prescriptions = prescriptions;
+    }
+
+    public List<Consultation> getConsultations() {
+        return consultations;
+    }
+
+    public void setConsultations(List<Consultation> consultations) {
+        this.consultations = consultations;
+    }
+
+    public String getDiagnosis() {
+        return diagnosis;
+    }
+
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public String getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
+    }
 }
 

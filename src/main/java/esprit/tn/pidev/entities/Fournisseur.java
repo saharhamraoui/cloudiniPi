@@ -1,5 +1,4 @@
 package esprit.tn.pidev.entities;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,9 +14,14 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Fournisseur extends User{
-
+public class Fournisseur {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nom;
     private String contact;
+    private String adresse;
+
     @OneToMany(mappedBy = "fournisseur")
     private List<Medicament> medicaments= new ArrayList<>();
 

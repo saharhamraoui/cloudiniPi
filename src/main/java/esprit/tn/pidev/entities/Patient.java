@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Patient extends  User{
+public class Patient extends User {
     private String medicalRecordNumber;
     private String bloodGroup;
     private String healthInsuranceNumber;
@@ -24,6 +24,7 @@ public class Patient extends  User{
     public String getMedicalRecordNumber() {
         return medicalRecordNumber;
     }
+
 
     public void setMedicalRecordNumber(String medicalRecordNumber) {
         this.medicalRecordNumber = medicalRecordNumber;

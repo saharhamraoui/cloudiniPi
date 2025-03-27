@@ -1,5 +1,6 @@
 package esprit.tn.pidev.entities;
 
+
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.Getter;
@@ -15,7 +16,6 @@ public class Medecin extends User {
     private String speciality;
     private String licenseNumber;
     private String availability;
-
 
 
     public String getSpeciality() {
@@ -41,6 +41,5 @@ public class Medecin extends User {
     public void setAvailability(String availability) {
         this.availability = availability;
     }
-
 
 }
